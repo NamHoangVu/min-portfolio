@@ -3,7 +3,7 @@
 Dette er min moderne portefølje bygget med **Next.js 15**, **TypeScript** og **Tailwind CSS**. Siden fungerer som mitt digitale visittkort og viser frem prosjektene mine med fokus på ytelse og brukeropplevelse.
 
 ## 🔗 Se siden live
-**[👉 namhoangvu-portfolio.vercel.app](namhoangvu-portfolio.vercel.app)**
+**[👉 namhoangvu-portfolio.vercel.app](https://namhoangvu-portfolio.vercel.app)**
 
 ---
 
@@ -52,4 +52,4 @@ Hvis du vil se på koden eller teste den på din egen maskin:
 
 **Nam Hoang Vu**
 * **GitHub:** [@NamHoangVu](https://github.com/NamHoangVu)
-* **Webside:** [namhoangvu-portfolio.vercel.app](namhoangvu-portfolio.vercel.app)
+* **Webside:** [namhoangvu-portfolio.vercel.app](https://namhoangvu-portfolio.vercel.app)
