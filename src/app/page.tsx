@@ -25,6 +25,14 @@ const myProjects: Project[] = [
     githubUrl: "https://github.com/NamHoangVu/Snake-Game",
     liveUrl: "https://namhoangvu.github.io/Snake-Game/",
   },
+  {
+    id: 2,
+    title: "StockSim",
+    description: "En full-stack aksjehandelssimulator hvor du kan kjøpe og selge reelle aksjer med live-priser ved hjelp av virtuell kapital. Bygget med Flask, React og Alpha Vantage.",
+    tags: ["Flask", "React", "Python", "SQLite", "Alpha Vantage API", "REST API"],
+    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/NamHoangVu/StockSim",
+  },
 ];
 
 // 3. HOVEDSIDEN
