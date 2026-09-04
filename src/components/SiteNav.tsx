@@ -43,7 +43,7 @@ export default function SiteNav() {
       className="fixed top-4 left-1/2 -translate-x-1/2 z-50 pointer-events-none"
       style={{ pointerEvents: visible ? 'auto' : 'none' }}
     >
-      <ul className="flex items-center gap-1 rounded-full border border-gray-800/60 bg-gray-950/70 backdrop-blur-md px-2 py-2 shadow-xl">
+      <ul className="flex items-center gap-1 rounded-full border border-gray-800/60 bg-gray-950/90 px-2 py-2 shadow-xl">
         {sections.map(({ id, label }) => (
           <li key={id}>
             <a

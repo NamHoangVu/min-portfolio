@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 import { profile } from '@/lib/content';
 
@@ -10,26 +8,18 @@ export default function AboutSection() {
       <SectionHeading title="Om meg" />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="lg:col-span-3 space-y-5"
-        >
+        <Reveal direction="left" distance={40} className="lg:col-span-3 space-y-5">
           {profile.aboutText.map((paragraph, i) => (
             <p key={i} className="text-gray-400 leading-relaxed text-lg">
               {paragraph}
             </p>
           ))}
-        </motion.div>
+        </Reveal>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="lg:col-span-2 bg-gray-900/40 border border-gray-800/60 rounded-[2rem] backdrop-blur-md p-8 shadow-2xl"
+        <Reveal
+          direction="right"
+          distance={40}
+          className="lg:col-span-2 bg-gray-900/70 border border-gray-800/60 rounded-[2rem] p-8 shadow-2xl"
         >
           <dl className="space-y-5">
             {profile.quickFacts.map((fact) => (
@@ -41,7 +31,7 @@ export default function AboutSection() {
               </div>
             ))}
           </dl>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, type Variants } from 'framer-motion';
+import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 import { skillGroups } from '@/lib/content';
 
@@ -22,21 +23,19 @@ export default function SkillsSection() {
       <SectionHeading title="Kompetanse" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {skillGroups.map((group, groupIndex) => (
-          <motion.div
+        {skillGroups.map((group) => (
+          <Reveal
             key={group.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
-            className="bg-gray-900/40 border border-gray-800/60 rounded-[2rem] backdrop-blur-md p-8 shadow-2xl"
+            direction="up"
+            distance={30}
+            className="bg-gray-900/70 border border-gray-800/60 rounded-[2rem] p-8 shadow-2xl"
           >
             <h3 className="text-lg font-bold text-white mb-5">{group.title}</h3>
             <motion.div
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               className="flex flex-wrap gap-2"
             >
               {group.skills.map((skill) => (
@@ -50,7 +49,7 @@ export default function SkillsSection() {
                 </motion.span>
               ))}
             </motion.div>
-          </motion.div>
+          </Reveal>
         ))}
       </div>
     </section>

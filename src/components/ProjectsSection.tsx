@@ -1,7 +1,5 @@
-'use client';
-
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 import { projects, type Project } from '@/lib/content';
 
@@ -11,22 +9,20 @@ export default function ProjectsSection() {
       <SectionHeading title="Utvalgte Prosjekter" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-gray-900/40 border border-gray-800/60 rounded-[2rem] overflow-hidden backdrop-blur-md hover:border-cyan-500/40 transition-all duration-500 flex flex-col shadow-2xl"
+    <Reveal
+      direction="up"
+      distance={30}
+      className="group bg-gray-900/70 border border-gray-800/60 rounded-[2rem] overflow-hidden hover:border-cyan-500/40 transition-all duration-500 flex flex-col shadow-2xl"
     >
       {/* Bilde-beholder med zoom-effekt */}
       <div className="relative h-64 w-full overflow-hidden">
@@ -84,6 +80,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           )}
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }

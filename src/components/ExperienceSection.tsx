@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 import { experience } from '@/lib/content';
 
@@ -37,12 +38,10 @@ export default function ExperienceSection() {
                 {/* Prikk på linjen */}
                 <span className="absolute left-4 md:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_2px_rgba(34,211,238,0.6)]" />
 
-                <motion.div
-                  initial={{ opacity: 0, x: fromLeft ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.6 }}
-                  className={`bg-gray-900/40 border border-gray-800/60 rounded-[2rem] backdrop-blur-md p-8 shadow-2xl ${
+                <Reveal
+                  direction={fromLeft ? 'left' : 'right'}
+                  distance={50}
+                  className={`bg-gray-900/70 border border-gray-800/60 rounded-[2rem] p-8 shadow-2xl ${
                     fromLeft ? 'md:col-start-1' : 'md:col-start-2'
                   }`}
                 >
@@ -59,7 +58,7 @@ export default function ExperienceSection() {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </Reveal>
               </div>
             );
           })}
